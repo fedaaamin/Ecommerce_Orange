@@ -24,13 +24,11 @@ class AuthCubit extends Cubit<AuthState> {
     });
   }
 
-  void register(String userName, String password, String email, String phone) {
+  void register( String password, String email, ) {
     emit(AuthRegisterLoading());
     Map<String, String> data = {
-      'username': userName,
       'password': password,
       "email": email,
-      "phone": phone
     };
     DioHelper.postData(url: Endpoints.signUpEndPoint, data: data).then((value) {
       if (value.statusCode == 200) {

@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   "assets/images/logo.png",
                   width: 72.w, height: 72.h,),
                 SizedBox(height: 34.h),
-                Text("E-Commerce.",
+                Text("E-Commerce",
                   style: TextStyle(fontSize: 20,
                       fontWeight: FontWeight.bold
                   ),
