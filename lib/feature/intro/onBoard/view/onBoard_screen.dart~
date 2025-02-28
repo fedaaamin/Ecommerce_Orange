@@ -83,9 +83,12 @@ class _OnboardScreenState extends State<OnboardScreen> {
             ElevatedButton(
               onPressed: () {
                 if (currentIndex == data.length - 1) {
-                  context.pushReplacementTransition(
-                    type: PageTransitionType.fade,
-                    child: LoginScreen(),
+                  Navigator.pushReplacement(
+                    context,
+                    PageTransition(
+                      child: LoginScreen(),
+                      type: PageTransitionType.fade,
+                    ),
                   );
                 } else {
                   _pageController.animateToPage(

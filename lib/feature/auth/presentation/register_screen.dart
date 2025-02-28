@@ -3,6 +3,7 @@ import 'package:counter/feature/auth/logic/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../core/widgets/custom_button.dart';
 import '../../../core/widgets/custom_text_input.dart';
@@ -10,6 +11,7 @@ import 'login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
+
   TextEditingController passwordController = TextEditingController();
 
   TextEditingController emailController = TextEditingController();
@@ -34,9 +36,13 @@ class RegisterScreen extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: Text("Success Registeration"),
               ));
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return LoginScreen();
-              }));
+              Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: 500),
+                    child: LoginScreen(),
+                  ));
             }
 
             if (state is AuthRegisterFailure) {
@@ -67,7 +73,6 @@ class RegisterScreen extends StatelessWidget {
                     labelText: 'Email Address',
                     controller: emailController,
                   ),
-
                   SizedBox(height: 24.h),
                   CustomTextInput(
                     hintText: ' Password',
@@ -87,9 +92,8 @@ class RegisterScreen extends StatelessWidget {
                       label: 'Register',
                       onPressed: () {
                         context.read<AuthCubit>().register(
-
-                            passwordController.text,
-                            emailController.text,
+                              passwordController.text,
+                              emailController.text,
                             );
                       }),
                   SizedBox(height: 20.h),
@@ -104,21 +108,17 @@ class RegisterScreen extends StatelessWidget {
                       Center(
                           child: Container(
                               padding: EdgeInsets.all(8),
-                              color:Colors.white,
-                              child: Text(
-                                  "or continue with",
-                                  style:TextStyle(
-                                      color: Colors.grey
-                                  )
-                              ))
-                      )
+                              color: Colors.white,
+                              child: Text("or continue with",
+                                  style: TextStyle(color: Colors.grey))))
                     ],
-
                   ),
-                  SocialContainer(label: "Continue with Google", icon: Image.asset("assets/images/img.png")),
-                  SocialContainer(label:"Continue with Facebook", icon: Icon(
-                      Icons.facebook,
-                      color: Colors.blue)),
+                  SocialContainer(
+                      label: "Continue with Google",
+                      icon: Image.asset("assets/images/img.png")),
+                  SocialContainer(
+                      label: "Continue with Facebook",
+                      icon: Icon(Icons.facebook, color: Colors.blue)),
                 ],
               ),
             ));

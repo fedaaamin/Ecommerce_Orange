@@ -1,0 +1,17 @@
+import 'package:counter/notification/data/model/notification_item.dart';
+import 'package:flutter/material.dart';
+
+class NotificationGroup extends StatelessWidget {
+  const NotificationGroup({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+       NotificationItem(title: "30% Special Discount!", subtitle: "Special promotion only valid today", icon: Icons.discount_outlined),
+
+      ],
+    );
+  }
+}

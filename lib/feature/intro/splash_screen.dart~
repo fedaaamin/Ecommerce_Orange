@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Scaffold(
         body: FlutterSplashScreen.fadeIn(
           nextScreen:
-           token != null ? CustomNavBar(initialIndex: 0,) :
+           token != null ? CustomNavBar() :
           OnboardScreen(),
           backgroundColor: Colors.white,
           duration: const Duration(milliseconds: 3515),

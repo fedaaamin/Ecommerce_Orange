@@ -61,21 +61,21 @@ class RegisterScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  SizedBox(height: 24),
+                  SizedBox(height: 24.h),
                   CustomTextInput(
                     hintText: ' Email Address',
                     labelText: 'Email Address',
                     controller: emailController,
                   ),
 
-                  SizedBox(height: 24),
+                  SizedBox(height: 24.h),
                   CustomTextInput(
                     hintText: ' Password',
                     labelText: 'Password',
                     controller: passwordController,
                     isPassword: true,
                   ),
-                  SizedBox(height: 24),
+                  SizedBox(height: 24.h),
                   CustomTextInput(
                     hintText: 'Confirm Password',
                     labelText: 'Password',

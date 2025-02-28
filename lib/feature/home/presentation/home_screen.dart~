@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                                       style: TextStyle(fontSize: 15),
                                     ),
                                     Text(
-                                      "${user!.name!.firstname!} ${user.name!
+                                      "${user!.name!.firstname!} ${user!.name!
                                           .lastname!}",
                                       style: TextStyle(fontSize: 18),
                                     ),

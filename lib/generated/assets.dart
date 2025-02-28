@@ -2,8 +2,11 @@
 class Assets {
   Assets._();
 
+  static const String imagesCongrat = 'assets/images/congrat.png';
+  static const String imagesHomeBackGround = 'assets/images/homeBackGround.png';
   static const String imagesImg = 'assets/images/img.png';
-  static const String imagesImg1 = 'assets/images/congrat.png';
+  static const String imagesImg1 = 'assets/images/img_1.png';
+  static const String imagesImg2 = 'assets/images/img_2.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesOnBoard1 = 'assets/images/onBoard1.png';
   static const String imagesOnBoard2 = 'assets/images/onBoard2.png';

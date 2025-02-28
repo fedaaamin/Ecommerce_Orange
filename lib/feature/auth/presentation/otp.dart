@@ -1,6 +1,7 @@
 import 'package:counter/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import 'login_screen.dart';
@@ -134,8 +135,11 @@ class _OtpState extends State<Otp> {
                                       onPressed: (){
                                         Navigator.push(
                                             context,
-                                            MaterialPageRoute(
-                                                builder: (context) => LoginScreen()));
+                                            PageTransition(
+                                              type: PageTransitionType.fade,
+                                              duration: Duration(milliseconds: 500),
+                                              child: LoginScreen(),
+                                            ));
                                       })
                                 ]
                             ),

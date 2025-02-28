@@ -4,9 +4,11 @@ import 'package:counter/feature/auth/data/text_field_icon.dart';
 import 'package:counter/feature/auth/logic/auth_cubit.dart';
 import 'package:counter/feature/auth/presentation/otp.dart';
 import 'package:counter/feature/auth/presentation/register_screen.dart';
+import 'package:counter/feature/home/presentation/home_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../core/widgets/custom_button.dart';
 import '../../../core/widgets/custom_text_input.dart';
@@ -42,7 +44,11 @@ class _LoginScreenState extends State<LoginScreen> {
             if (state is AuthLoginSuccess) {
               Navigator.pop(context);
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()));
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    duration: Duration(milliseconds: 500),
+                    child: HomePageScreen(),
+                  ));
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: Text("Success Login"),
               ));
@@ -152,8 +158,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 onPressed: (){
                                                   Navigator.push(
                                                       context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) => Otp()));
+                                                      PageTransition(
+                                                        type: PageTransitionType.fade,
+                                                        duration: Duration(milliseconds: 500),
+                                                        child: Otp(),
+                                                      )
+                                                     );
                                                 })
                                           ]
                                       ),
@@ -215,8 +225,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) => RegisterScreen()));
+                                  PageTransition(
+                                    type: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 500),
+                                    child: RegisterScreen(),
+                                  ));
                             },
                           child: Text("Register",
                             style: TextStyle(
