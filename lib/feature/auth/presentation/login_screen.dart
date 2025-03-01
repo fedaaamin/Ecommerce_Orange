@@ -4,6 +4,7 @@ import 'package:counter/feature/auth/data/text_field_icon.dart';
 import 'package:counter/feature/auth/logic/auth_cubit.dart';
 import 'package:counter/feature/auth/presentation/otp.dart';
 import 'package:counter/feature/auth/presentation/register_screen.dart';
+import 'package:counter/feature/home/presentation/custom_nav_bar.dart';
 import 'package:counter/feature/home/presentation/home_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +13,7 @@ import 'package:page_transition/page_transition.dart';
 
 import '../../../core/widgets/custom_button.dart';
 import '../../../core/widgets/custom_text_input.dart';
-import '../../home/presentation/home_screen.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -47,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   PageTransition(
                     type: PageTransitionType.fade,
                     duration: Duration(milliseconds: 500),
-                    child: HomePageScreen(),
+                    child: CustomNavBar(initialIndex: 0),
                   ));
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: Text("Success Login"),

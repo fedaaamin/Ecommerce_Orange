@@ -2,7 +2,6 @@
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:counter/core/db/cache/cache_helper.dart';
 import 'package:counter/feature/home/presentation/custom_nav_bar.dart';
-import 'package:counter/feature/home/presentation/home_screen.dart';
 import 'package:counter/feature/intro/onBoard/view/onBoard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Scaffold(
         body: FlutterSplashScreen.fadeIn(
           nextScreen:
-           token != null ? CustomNavBar(initialIndex: 0,) :
+           // token != null ? CustomNavBar(initialIndex: 0,) :
           OnboardScreen(),
           backgroundColor: Colors.white,
           duration: const Duration(milliseconds: 3515),

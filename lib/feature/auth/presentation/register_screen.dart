@@ -53,75 +53,78 @@ class RegisterScreen extends StatelessWidget {
             }
           },
           builder: (context, state) {
-            return SafeArea(
-                child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.h),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 24.h),
-                  Text(
-                    "Create your new \n account",
-                    style: TextStyle(
-                      fontSize: 32.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  SizedBox(height: 24.h),
-                  CustomTextInput(
-                    hintText: ' Email Address',
-                    labelText: 'Email Address',
-                    controller: emailController,
-                  ),
-                  SizedBox(height: 24.h),
-                  CustomTextInput(
-                    hintText: ' Password',
-                    labelText: 'Password',
-                    controller: passwordController,
-                    isPassword: true,
-                  ),
-                  SizedBox(height: 24.h),
-                  CustomTextInput(
-                    hintText: 'Confirm Password',
-                    labelText: 'Password',
-                    controller: passwordController,
-                    isPassword: true,
-                  ),
-                  SizedBox(height: 24),
-                  CustomButton(
-                      label: 'Register',
-                      onPressed: () {
-                        context.read<AuthCubit>().register(
-                              passwordController.text,
-                              emailController.text,
-                            );
-                      }),
-                  SizedBox(height: 20.h),
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Divider(
-                        height: 1.h,
-                        thickness: 2,
-                        color: Colors.grey[300],
+            return SingleChildScrollView(
+              
+              child: SafeArea(
+                  child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.h),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 24.h),
+                    Text(
+                      "Create your new \n account",
+                      style: TextStyle(
+                        fontSize: 32.sp,
+                        fontWeight: FontWeight.w600,
                       ),
-                      Center(
-                          child: Container(
-                              padding: EdgeInsets.all(8),
-                              color: Colors.white,
-                              child: Text("or continue with",
-                                  style: TextStyle(color: Colors.grey))))
-                    ],
-                  ),
-                  SocialContainer(
-                      label: "Continue with Google",
-                      icon: Image.asset("assets/images/img.png")),
-                  SocialContainer(
-                      label: "Continue with Facebook",
-                      icon: Icon(Icons.facebook, color: Colors.blue)),
-                ],
-              ),
-            ));
+                    ),
+                    SizedBox(height: 24.h),
+                    CustomTextInput(
+                      hintText: ' Email Address',
+                      labelText: 'Email Address',
+                      controller: emailController,
+                    ),
+                    SizedBox(height: 24.h),
+                    CustomTextInput(
+                      hintText: ' Password',
+                      labelText: 'Password',
+                      controller: passwordController,
+                      isPassword: true,
+                    ),
+                    SizedBox(height: 24.h),
+                    CustomTextInput(
+                      hintText: 'Confirm Password',
+                      labelText: 'Password',
+                      controller: passwordController,
+                      isPassword: true,
+                    ),
+                    SizedBox(height: 24),
+                    CustomButton(
+                        label: 'Register',
+                        onPressed: () {
+                          context.read<AuthCubit>().register(
+                                passwordController.text,
+                                emailController.text,
+                              );
+                        }),
+                    SizedBox(height: 20.h),
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Divider(
+                          height: 1.h,
+                          thickness: 2,
+                          color: Colors.grey[300],
+                        ),
+                        Center(
+                            child: Container(
+                                padding: EdgeInsets.all(8),
+                                color: Colors.white,
+                                child: Text("or continue with",
+                                    style: TextStyle(color: Colors.grey))))
+                      ],
+                    ),
+                    SocialContainer(
+                        label: "Continue with Google",
+                        icon: Image.asset("assets/images/img.png")),
+                    SocialContainer(
+                        label: "Continue with Facebook",
+                        icon: Icon(Icons.facebook, color: Colors.blue)),
+                  ],
+                ),
+              )),
+            );
           },
         ),
       ),

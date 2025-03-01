@@ -1,5 +1,6 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:counter/core/db/local_db/local_db_helper.dart';
+import 'package:counter/core/db/local_db/wishList_db_helper.dart';
 import 'package:counter/core/widgets/custom_button.dart';
 import 'package:counter/feature/cart/presentation/cart_screen.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                       var data =
                                           context.read<HomeCubit>().product!;
                                       if (fav == true) {
-                                        SQLHelper.add(
+                                       WishlistSQLHelper.add(
                                             data.id.toString(),
                                             data.title!,
                                             data.description ?? "",
@@ -78,7 +79,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                           content: Text("Added to Wishlist"),
                                         ));
                                       } else {
-                                        SQLHelper.delete(data.id.toString());
+                                       WishlistSQLHelper.delete(data.id.toString());
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(SnackBar(
                                           content:

@@ -48,6 +48,7 @@ class _OtpState extends State<Otp> {
               ),),
               SizedBox(height: 30.h),
               PinCodeTextField(
+                keyboardType: TextInputType.number,
                 cursorColor: Colors.black,
                 length: 4,
                 obscureText: false,

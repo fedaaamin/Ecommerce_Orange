@@ -11,10 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../../browse/view/BrowseScreen.dart';
-import '../../cart/presentation/cart_screen.dart';
-import '../../profile/view/profile_screen.dart';
-import '../../wishlist/view/wishlist_screen.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});

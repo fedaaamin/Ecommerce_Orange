@@ -1,4 +1,4 @@
-class ProductCartModel {
+class ProductWishListModel {
   String? id;
   String? title;
   num? price;
@@ -6,15 +6,15 @@ class ProductCartModel {
   String? image;
   int? quantity;
 
-  ProductCartModel(
+  ProductWishListModel(
       {this.id,
-      this.title,
-      this.price,
-      this.description,
-      this.image,
-      this.quantity});
+        this.title,
+        this.price,
+        this.description,
+        this.image,
+        this.quantity});
 
-  ProductCartModel.fromJson(Map<String, dynamic> json) {
+  ProductWishListModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
     price = json['price'];
